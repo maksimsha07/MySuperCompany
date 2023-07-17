@@ -102,7 +102,7 @@ public class EmployeeController : ControllerBase
         }
 
         var entity = await _mediator.Send(new GetEmployeeQuery { Id = dto.Id });
-        return new EmployeeDto
+        return new EmployeeDto 
         {
             Id = entity.Id,
             Department = entity.Department.NameOfDepartment,

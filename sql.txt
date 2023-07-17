@@ -1,0 +1,16 @@
+--Все сотрудники
+select * from [MySuperCompany].[dbo].[employees]
+
+--У кого ЗП выше 10000
+select * from [MySuperCompany].[dbo].[employees] as em
+where em.salary > 10000
+
+--Удаление сотрудников старше 70 лет
+delete
+from [MySuperCompany].[dbo].[employees]
+where DATEDIFF(year, getutcdate(), birthday) > 70;
+
+--Обновить ЗП до 15000
+update [MySuperCompany].[dbo].[employees]
+set salary = 15000
+where salary < 15000;
