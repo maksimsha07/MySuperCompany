@@ -57,7 +57,7 @@ public class EmployeeController : ControllerBase
     /// </summary>
     /// <param name="dto">DTO</param>
     /// <returns></returns>
-    [HttpDelete]
+    [HttpPost]
     public async Task<IActionResult> Delete(DeleteEmployeeDto dto)
     {
         await _mediator.Send(new DeleteEmployeeCommand { Id = dto.Id });
@@ -68,7 +68,7 @@ public class EmployeeController : ControllerBase
     /// Получить список всех записей.
     /// </summary>
     /// <returns></returns>
-    [HttpGet("/list")]
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<ListDto>>> List()
     {
         var baseQuery = await _mediator.Send(new ListQuery());
